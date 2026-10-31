@@ -40,7 +40,7 @@ Real Walking reads two kinds of game geometry: pedestrian **Net** paths for road
 
 For public transport, the controller reads vehicle position and motion, uses the embedded camera's follow system, and finds a suitable nearby walking surface when leaving a vehicle. It does not create a simulated player citizen or modify traffic AI.
 
-Read the [technical architecture](docs/ARCHITECTURE.md), [code map](docs/SOURCE_MAP.md), and [development history](docs/DEVELOPMENT_HISTORY.md).
+Read the [technical architecture](docs/ARCHITECTURE.md), [code map](docs/SOURCE_MAP.md), and development history in [English](docs/DEVELOPMENT_HISTORY_EN.md) or [Chinese](docs/DEVELOPMENT_HISTORY.md).
 
 ## Source and development
 
