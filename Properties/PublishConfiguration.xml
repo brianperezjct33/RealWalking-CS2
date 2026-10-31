@@ -4,19 +4,37 @@
   <DisplayName Value="Real Walking — Standalone" />
   <ShortDescription Value="Explore your city on foot and ride public transit. First-person camera included; no separate FPC required." />
   <LongDescription>
-Walk through your Cities: Skylines II city with ground-aware first-person navigation. Walk along real pedestrian paths, use stairs and station areas, and board or leave supported transit vehicles.
+Explore the city you built — on foot.
 
-Controls: Alt+F to enter or leave; WASD move on foot; Shift run; mouse look; E to board or disembark at a valid stop; Ctrl+Shift+J switches navigation/free flight (and releases the vehicle into flight while riding); Ctrl+Shift+V toggles all developer visuals; Esc exits first person. WASD does not disembark. Boarding requires the vehicle to be fully stopped (including at red lights or in traffic); moving vehicles cannot be boarded. Bus/tram disembarking also requires a sustained stop and a safe landing. Free flight holds absolute world height independent of terrain and water; R/F changes flight height. Boarding is disabled in free flight.
+Real Walking adds pedestrian-aware first-person walking, stairs and station exploration, public transport rides and independent free flight to Cities: Skylines II. Press Alt+F to enter first person at the closest suitable walkable surface to your camera. Follow roads, bridges, station platforms and navigation areas, with automatic height tracking and path boundary handling.
 
-Standalone edition: includes a modified lightweight First Person Camera Continued engine. No separate FPC mod is needed. Do NOT enable this alongside First Person Camera Continued, earlier FPC forks, or the future Real Walking FPC Edition. Disable other camera mods and restart your game.
+Ride stopped buses, trams, metro and passenger trains, ferries and passenger ships. Press E near a stopped vehicle to board, then leave at a suitable stop when a safe walking surface is available. A route and stop display appears while riding.
 
-Features: ground-following walking, pedestrian network and Navigation Area surfaces, stairs, E-key public transit boarding, route/stop information, and clean Alt+F view with restored UI on exit. Transit exit depends on validated nearby walkable geometry; it may be unavailable at some custom stations.
+CONTROLS
+Alt+F: Enter / leave first person
+WASD + Mouse: Move / look
+Shift: Move faster on foot
+E: Board or disembark when allowed
+Ctrl+Shift+J: Navigation walking / free flight
+R / F: Raise / lower flight altitude
+Ctrl+Shift+V: Toggle navigation debug overlays
+Esc: Exit first person
 
-Credits: camera code adapted from First Person Camera Continued by Cgameworld and earlier contributors. Real Walking navigation and transport integration: Real Walking project. GPLv2 source and acknowledgements: see the source release accompanying this version. Not affiliated with or endorsed by the original camera authors.
+STANDALONE CAMERA INCLUDED
+First Person Camera Continued is built into this edition. Do not enable a separate FPC Continued or another conflicting first-person camera mod in the same playset. Restart the game after changing camera mods.
+
+COMPATIBILITY
+Tested with Cities: Skylines II 1.6.x on Windows. Some custom stations, unusual paths and waterfront assets lack suitable navigation geometry, so not every surface or vehicle exit is supported. Entering walking mode while the simulation is paused may fail to find a correct landing; resume the simulation before pressing Alt+F. The mod does not intentionally modify saved city entities or traffic AI; back up important saves as with any code mod.
+
+SOURCE AND CREDITS
+Full source (GPLv2), development history and issue reporting:
+https://github.com/brianperezjct33/RealWalking-CS2
+
+Embedded camera adapted from First Person Camera Continued by Cgameworld and earlier contributors. This is a community project, not an official Colossal Order / Paradox Interactive mod. Developed with substantial AI coding assistance and maintainer-directed in-game testing.
   </LongDescription>
   <Thumbnail Value="Properties/Thumbnail.png" />
   <ModVersion Value="0.10.12-rc27" />
   <GameVersion Value="1.6.*" />
-  <ChangeLog Value="RC27: remove orphaned FPC random-follow state and callbacks, unused private helpers, obsolete localization keys and unsafe new-mod publish profile. Documentation and static checks updated. No intended gameplay changes." />
+  <ChangeLog Value="Standalone camera included; no separate First Person Camera Continued dependency. Adds path-aware walking, stairs and station navigation, stopped-vehicle boarding, safe transit exits, free flight, a route display and 12 UI languages. Source: https://github.com/brianperezjct33/RealWalking-CS2" />
   <AccessLevel Value="Unlisted" />
 </Publish>
