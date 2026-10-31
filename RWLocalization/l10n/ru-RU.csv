@@ -1,0 +1,25 @@
+rw.vehicle.generic,Общественный транспорт
+rw.vehicle.bus,Автобус
+rw.vehicle.tram,Трамвай
+rw.vehicle.train,Поезд
+rw.vehicle.subway,Метро
+rw.vehicle.ferry,Паром
+rw.vehicle.ship,Пассажирское судно
+rw.vehicle.airplane,Самолёт
+rw.transit.board_prompt,[ E ] Сесть на {0}
+rw.transit.exit_prompt,[ E ] Выйти (лучше на остановке)
+rw.transit.exit_wait_stopped,Дождитесь полной остановки транспорта перед выходом.
+rw.transit.exit_no_platform,Безопасная платформа не подтверждена. Выход недоступен (см. журнал).
+rw.transit.exit_no_quay,Пешеходный причал не подтверждён или судно не пришвартовано. Высадка недоступна.
+rw.transit.exit_no_path,Рядом нет безопасного пешеходного пути. Повторите попытку на остановке.
+rw.transit.exit_failed,Не удалось выйти из режима слежения: {0}
+rw.walk.no_network,Рядом не найден пешеходный путь. Свободный режим сохранён.
+rw.stop.default,Остановка {0}
+rw.route.unnamed,{0} (маршрут без названия)
+rw.stop.next,Следующая остановка: {0}
+rw.stop.origin,Начало · {0}
+rw.stop.partial,{0} / {1} остановок
+rw.stop.total,Всего остановок: {0}
+rw.stop.generic,Остановка
+rw.stop.station_suffix,Станция
+rw.fpc.conflict,Загружен другой мод First Person Camera. Отключите внешний FPC и перезапустите игру перед использованием Real Walking Standalone. Не включайте обе версии одновременно.

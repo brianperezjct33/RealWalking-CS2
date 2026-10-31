@@ -1,0 +1,25 @@
+rw.vehicle.generic,公共交通機関
+rw.vehicle.bus,バス
+rw.vehicle.tram,路面電車
+rw.vehicle.train,列車
+rw.vehicle.subway,地下鉄
+rw.vehicle.ferry,フェリー
+rw.vehicle.ship,旅客船
+rw.vehicle.airplane,飛行機
+rw.transit.board_prompt,[ E ] {0}に乗る
+rw.transit.exit_prompt,[ E ] 降りる（停留所付近を推奨）
+rw.transit.exit_wait_stopped,車両が完全に停止してから降りてください。
+rw.transit.exit_no_platform,安全なホームを確認できないため降車できません（ログを確認してください）。
+rw.transit.exit_no_quay,歩行可能な岸壁が確認できないか船が停泊中ではないため下船できません。
+rw.transit.exit_no_path,近くに安全な歩行経路がありません。停留所で再試行してください。
+rw.transit.exit_failed,追跡モードを終了できません：{0}
+rw.walk.no_network,近くに歩行可能な歩道が見つからないためフリーモードのままです。
+rw.stop.default,停留所 {0}
+rw.route.unnamed,{0}（名称未設定の路線）
+rw.stop.next,次の停留所：{0}
+rw.stop.origin,始点・{0}
+rw.stop.partial,{0} / {1} 停留所
+rw.stop.total,合計 {0} 停留所
+rw.stop.generic,停留所
+rw.stop.station_suffix,駅
+rw.fpc.conflict,別の First Person Camera MOD が読み込まれています。外部 FPC を無効にしてゲームを再起動してください。両エディションを同時に有効にしないでください。

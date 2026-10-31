@@ -1,0 +1,140 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Configurations>Debug;Release</Configurations>
+	
+		<!--The file where mod information which is required for publishing mod on PDX mods are stored-->
+		<PublishConfigurationPath>Properties\PublishConfiguration.xml</PublishConfigurationPath>
+	</PropertyGroup>
+	
+	<!--Imports must be after PropertyGroup block-->
+	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.props" />
+	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.targets" />
+
+	<ItemGroup>
+		<Reference Include="Game">
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Colossal.Core">
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Colossal.Logging">
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Colossal.IO.AssetDatabase">
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Unity.Burst">
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Unity.Collections">
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Unity.Entities">
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Unity.Mathematics">
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Update="System">
+			<Private>false</Private>
+		</Reference>
+		<Reference Update="System.Core">
+			<Private>false</Private>
+		</Reference>
+		<Reference Update="System.Data">
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="$(ModPropsFile)" Link="Properties\Mod.props" />
+		<None Include="$(ModTargetsFile)" Link="Properties\Mod.targets" />
+	</ItemGroup>
+
+  <!-- Real Walking G1.9 preserves the proven assembly identity; do not rename it
+       without a dedicated migration and duplicate-mod test. -->
+  <PropertyGroup>
+    <AssemblyName>CS2RealWalkingG1Bridge</AssemblyName>
+    <RootNamespace>CS2RealWalkingG1Bridge</RootNamespace>
+    <Version>0.10.12.0</Version>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <DefineConstants>$(DefineConstants);RW_AREA</DefineConstants>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <!-- Real Walking: grouped by responsibility; assembly namespace and runtime identity unchanged. -->
+  <ItemGroup>
+    <!-- Bootstrap -->
+    <Compile Include="src\Bootstrap\Mod.cs" />
+    <Compile Include="src\Bootstrap\RWCameraRecovery.cs" />
+    <Compile Include="src\Bootstrap\RWFpcAdapter.cs" />
+    <Compile Include="src\Bootstrap\RWHotkeys.cs" />
+    <Compile Include="src\Bootstrap\RWJournal.cs" />
+    <Compile Include="src\Bootstrap\RWStandaloneFpcConflict.cs" />
+    <!-- Entry -->
+    <Compile Include="src\Entry\RWAutoEntry.cs" />
+    <Compile Include="src\Entry\RWEntryGeometry.cs" />
+    <Compile Include="src\Entry\RWWaterSafety.cs" />
+    <!-- Navigation -->
+    <Compile Include="src\Navigation\RWCameraHeight.cs" />
+    <Compile Include="src\Navigation\RWOverlay.cs" />
+    <Compile Include="src\Navigation\RWOverlayAreas.cs" />
+    <Compile Include="src\Navigation\RWOverlayNet.cs" />
+    <Compile Include="src\Navigation\RWWalkState.cs" />
+    <Compile Include="src\Navigation\RWWalking.cs" />
+    <Compile Include="src\Navigation\RWWalkingCamera.cs" />
+    <Compile Include="src\Navigation\RWWalkingGeometry.cs" />
+    <!-- Debug -->
+    <Compile Include="src\Debug\RWOverlayView.cs" />
+    <Compile Include="src\Navigation\RWWalkingHud.cs" />
+    <!-- Transit -->
+    <Compile Include="src\Transit\RWTransitBoarding.cs" />
+    <Compile Include="src\Transit\RWTransitFpc.cs" />
+    <Compile Include="src\Transit\RWTransitHint.cs" />
+    <Compile Include="src\Transit\RWTransitLanding.cs" />
+    <Compile Include="src\Transit\RWTransitLandingGeometry.cs" />
+    <Compile Include="src\Transit\RWTransitLandingRail.cs" />
+    <Compile Include="src\Transit\RWTransitLandingWater.cs" />
+    <Compile Include="src\Transit\RWTransitMotion.cs" />
+    <Compile Include="src\Transit\RWTransitRide.cs" />
+    <Compile Include="src\Transit\RWTransitRideExit.cs" />
+    <!-- Routes -->
+    <Compile Include="src\Routes\RWStopNames.cs" />
+    <Compile Include="src\Routes\RWStopStrip.cs" />
+    <Compile Include="src\Routes\RWStopStripHud.cs" />
+    <!-- Localization -->
+    <Compile Include="src\Localization\RWLocalization.cs" />
+    <EmbeddedResource Include="RWLocalization\l10n\*.csv" LogicalName="CS2RealWalkingG1Bridge.rw_l10n.%(Filename)%(Extension)" />
+    <Compile Include="FPCSource\**\*.cs" />
+    <EmbeddedResource Include="FPCSource\l10n\*.csv" LogicalName="CS2RealWalkingG1Bridge.l10n.%(Filename)%(Extension)" />
+    <!-- The official toolchain resolves these via its managed assembly search path.
+         Private=false prevents copying game DLLs into the released mod. -->
+    <Reference Include="Colossal.Collections"><Private>false</Private></Reference>
+    <Reference Include="Colossal.UI"><Private>false</Private></Reference>
+    <Reference Include="Colossal.Mathematics"><Private>false</Private></Reference>
+    <Reference Include="Unity.InputSystem"><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><Private>false</Private></Reference>
+  </ItemGroup>
+
+
+  <!-- The FPC camera code is compiled INTO this assembly, not referenced as an external mod.
+       lib Harmony is a build/package dependency, not a Paradox Mods dependency. -->
+  <ItemGroup>
+    <PackageReference Include="Lib.Harmony" Version="2.2.2" />
+    <Reference Include="Cinemachine"><Private>false</Private></Reference>
+    <Reference Include="Colossal.Localization"><Private>false</Private></Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime"><Private>false</Private></Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime"><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AudioModule"><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.PhysicsModule"><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

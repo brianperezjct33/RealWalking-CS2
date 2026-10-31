@@ -1,0 +1,25 @@
+rw.vehicle.generic,Public transport
+rw.vehicle.bus,Bus
+rw.vehicle.tram,Tram
+rw.vehicle.train,Train
+rw.vehicle.subway,Subway
+rw.vehicle.ferry,Ferry
+rw.vehicle.ship,Passenger ship
+rw.vehicle.airplane,Airplane
+rw.transit.board_prompt,[ E ] Board {0}
+rw.transit.exit_prompt,[ E ] Disembark (prefer a stop)
+rw.transit.exit_wait_stopped,Wait until the vehicle has fully stopped before disembarking.
+rw.transit.exit_no_platform,No verified platform nearby. Disembarking is unavailable (see log).
+rw.transit.exit_no_quay,No verified walkable quay or the ship is not boarding. Cannot disembark.
+rw.transit.exit_no_path,No safe walking surface nearby. Try again at a stop.
+rw.transit.exit_failed,Could not exit follow mode: {0}
+rw.walk.no_network,No nearby walkable pedestrian path was found. Staying in free mode.
+rw.stop.default,Stop {0}
+rw.route.unnamed,{0} (unnamed line)
+rw.stop.next,Next stop: {0}
+rw.stop.origin,Origin · {0}
+rw.stop.partial,{0} / {1} stops
+rw.stop.total,{0} stops in total
+rw.stop.generic,Stop
+rw.stop.station_suffix,Station
+rw.fpc.conflict,Another First Person Camera mod is loaded. Disable the external FPC and restart the game before using Real Walking Standalone. Do not enable both editions together.

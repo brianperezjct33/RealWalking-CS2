@@ -1,0 +1,25 @@
+rw.vehicle.generic,대중교통
+rw.vehicle.bus,버스
+rw.vehicle.tram,노면전차
+rw.vehicle.train,기차
+rw.vehicle.subway,지하철
+rw.vehicle.ferry,페리
+rw.vehicle.ship,여객선
+rw.vehicle.airplane,비행기
+rw.transit.board_prompt,[ E ] {0} 탑승
+rw.transit.exit_prompt,[ E ] 하차 (정류장 권장)
+rw.transit.exit_wait_stopped,차량이 완전히 정차한 뒤 하차하세요.
+rw.transit.exit_no_platform,확인된 승강장이 없어 하차할 수 없습니다 (로그 확인).
+rw.transit.exit_no_quay,보행 가능한 부두가 확인되지 않았거나 선박이 정박 중이 아니어서 내릴 수 없습니다.
+rw.transit.exit_no_path,주변에 안전한 보행 구역이 없습니다. 정류장에서 다시 시도하세요.
+rw.transit.exit_failed,따라가기 모드를 종료할 수 없습니다: {0}
+rw.walk.no_network,주변에 보행 가능한 길이 없어 자유 모드를 유지합니다.
+rw.stop.default,정류장 {0}
+rw.route.unnamed,{0} (이름 없는 노선)
+rw.stop.next,다음 정류장: {0}
+rw.stop.origin,출발점 · {0}
+rw.stop.partial,{0} / {1}개 정류장
+rw.stop.total,총 {0}개 정류장
+rw.stop.generic,정류장
+rw.stop.station_suffix,역
+rw.fpc.conflict,다른 First Person Camera 모드가 로드되었습니다. 외부 FPC를 비활성화하고 게임을 다시 시작하세요. 두 에디션을 동시에 사용하지 마세요.

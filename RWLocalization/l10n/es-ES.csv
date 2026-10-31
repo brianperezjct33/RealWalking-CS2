@@ -1,0 +1,25 @@
+rw.vehicle.generic,Transporte público
+rw.vehicle.bus,Autobús
+rw.vehicle.tram,Tranvía
+rw.vehicle.train,Tren
+rw.vehicle.subway,Metro
+rw.vehicle.ferry,Ferri
+rw.vehicle.ship,Barco de pasajeros
+rw.vehicle.airplane,Avión
+rw.transit.board_prompt,[ E ] Subir a {0}
+rw.transit.exit_prompt,[ E ] Bajar (mejor en una parada)
+rw.transit.exit_wait_stopped,Espera a que el vehículo se detenga por completo antes de bajar.
+rw.transit.exit_no_platform,No se encontró un andén seguro. No es posible bajar (consulta el registro).
+rw.transit.exit_no_quay,No se encontró un muelle transitable o el barco no está atracado. No se puede desembarcar.
+rw.transit.exit_no_path,No hay una ruta peatonal segura cerca. Inténtalo en una parada.
+rw.transit.exit_failed,No se pudo salir del modo de seguimiento: {0}
+rw.walk.no_network,No se encontró un camino peatonal cercano. Se mantiene el modo libre.
+rw.stop.default,Parada {0}
+rw.route.unnamed,{0} (línea sin nombre)
+rw.stop.next,Próxima parada: {0}
+rw.stop.origin,Origen · {0}
+rw.stop.partial,{0} / {1} paradas
+rw.stop.total,{0} paradas en total
+rw.stop.generic,Parada
+rw.stop.station_suffix,Estación
+rw.fpc.conflict,Se ha cargado otro mod First Person Camera. Desactiva el FPC externo y reinicia el juego antes de usar Real Walking Standalone. No actives ambas ediciones.

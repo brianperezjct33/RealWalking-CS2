@@ -1,0 +1,37 @@
+# Compiled artifacts and tooling outputs
+bin/
+obj/
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+*.dll
+*.pdb
+*.cache
+*.tmp
+# RC backup, logs and local test state
+backups/
+BuildLog*.txt
+Release-Build-State.json
+RW-G1-*.txt
+RW-G1-v090-*.txt
+*Results*.zip
+# Avoid staging downloaded game libraries, private playsets or local secrets
+Dependencies.txt
+*.env
+.env
+.env.*
+
+# Python checks and OS metadata
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+
+# Scratch and source comparison outputs
+*.patch
+*.diff
+
+# Machine-local game installation directory (never upload)
+.realwalking-build.local.json

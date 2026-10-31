@@ -1,0 +1,25 @@
+rw.vehicle.generic,Öffentlicher Verkehr
+rw.vehicle.bus,Bus
+rw.vehicle.tram,Straßenbahn
+rw.vehicle.train,Zug
+rw.vehicle.subway,U-Bahn
+rw.vehicle.ferry,Fähre
+rw.vehicle.ship,Passagierschiff
+rw.vehicle.airplane,Flugzeug
+rw.transit.board_prompt,[ E ] {0} betreten
+rw.transit.exit_prompt,[ E ] Aussteigen (am besten an einer Haltestelle)
+rw.transit.exit_wait_stopped,"Vor dem Aussteigen warten, bis das Fahrzeug vollständig steht."
+rw.transit.exit_no_platform,Kein sicherer Bahnsteig bestätigt. Aussteigen nicht möglich (siehe Protokoll).
+rw.transit.exit_no_quay,Kein begehbarer Kai bestätigt oder das Schiff legt nicht an. Aussteigen nicht möglich.
+rw.transit.exit_no_path,Kein sicherer Fußweg in der Nähe. Bitte an einer Haltestelle erneut versuchen.
+rw.transit.exit_failed,Folgemodus konnte nicht beendet werden: {0}
+rw.walk.no_network,Kein begehbarer Fußweg in der Nähe. Freier Modus bleibt aktiv.
+rw.stop.default,Haltestelle {0}
+rw.route.unnamed,{0} (unbenannte Linie)
+rw.stop.next,Nächster Halt: {0}
+rw.stop.origin,Start · {0}
+rw.stop.partial,{0} / {1} Haltestellen
+rw.stop.total,Insgesamt {0} Haltestellen
+rw.stop.generic,Haltestelle
+rw.stop.station_suffix,Bahnhof
+rw.fpc.conflict,Ein anderes First Person Camera Mod wurde geladen. Deaktiviere das externe FPC und starte das Spiel neu. Aktiviere nicht beide Versionen gleichzeitig.

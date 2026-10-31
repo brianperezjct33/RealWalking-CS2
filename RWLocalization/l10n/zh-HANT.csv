@@ -1,0 +1,25 @@
+rw.vehicle.generic,公共運輸
+rw.vehicle.bus,公車
+rw.vehicle.tram,路面電車
+rw.vehicle.train,火車
+rw.vehicle.subway,地鐵
+rw.vehicle.ferry,渡輪
+rw.vehicle.ship,客輪
+rw.vehicle.airplane,飛機
+rw.transit.board_prompt,[ E ] 搭乘{0}
+rw.transit.exit_prompt,[ E ] 下車（建議在站點下車）
+rw.transit.exit_wait_stopped,請等待車輛完全停穩後再下車。
+rw.transit.exit_no_platform,附近沒有已確認的月臺區域，暫時無法下車（請查看日誌）
+rw.transit.exit_no_quay,未確認可步行的碼頭區域或船舶尚未靠站，無法下船
+rw.transit.exit_no_path,附近沒有安全的步行區域，請在靠站後重試
+rw.transit.exit_failed,無法結束跟隨模式：{0}
+rw.walk.no_network,附近找不到可步行的人行道路，已保持自由模式
+rw.stop.default,站點 {0}
+rw.route.unnamed,{0}路線（未命名）
+rw.stop.next,下一站：{0}
+rw.stop.origin,起點·{0}
+rw.stop.partial,{0} / {1} 站
+rw.stop.total,共 {0} 站
+rw.stop.generic,站點
+rw.stop.station_suffix,車站
+rw.fpc.conflict,偵測到另一個第一人稱攝影機模組。請停用外部 FPC 並重新啟動遊戲，再使用 Real Walking 獨立版。請勿同時啟用兩個版本。

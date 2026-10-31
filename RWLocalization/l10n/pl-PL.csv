@@ -1,0 +1,25 @@
+rw.vehicle.generic,Transport publiczny
+rw.vehicle.bus,Autobus
+rw.vehicle.tram,Tramwaj
+rw.vehicle.train,Pociąg
+rw.vehicle.subway,Metro
+rw.vehicle.ferry,Prom
+rw.vehicle.ship,Statek pasażerski
+rw.vehicle.airplane,Samolot
+rw.transit.board_prompt,[ E ] Wsiądź do: {0}
+rw.transit.exit_prompt,[ E ] Wysiądź (najlepiej na przystanku)
+rw.transit.exit_wait_stopped,"Przed wysiadaniem poczekaj, aż pojazd całkowicie się zatrzyma."
+rw.transit.exit_no_platform,Nie potwierdzono bezpiecznego peronu. Wysiadanie niedostępne (zobacz dziennik).
+rw.transit.exit_no_quay,Nie potwierdzono dostępnego nabrzeża lub statek nie cumuje. Zejście na ląd niedostępne.
+rw.transit.exit_no_path,Brak bezpiecznej trasy pieszej w pobliżu. Spróbuj na przystanku.
+rw.transit.exit_failed,Nie udało się zakończyć śledzenia: {0}
+rw.walk.no_network,Nie znaleziono chodnika w pobliżu. Pozostajesz w trybie swobodnym.
+rw.stop.default,Przystanek {0}
+rw.route.unnamed,{0} (linia bez nazwy)
+rw.stop.next,Następny przystanek: {0}
+rw.stop.origin,Początek · {0}
+rw.stop.partial,{0} / {1} przystanków
+rw.stop.total,Łącznie przystanków: {0}
+rw.stop.generic,Przystanek
+rw.stop.station_suffix,Stacja
+rw.fpc.conflict,Wczytano inny mod First Person Camera. Wyłącz zewnętrzny FPC i uruchom grę ponownie przed użyciem Real Walking Standalone. Nie włączaj obu edycji jednocześnie.

@@ -1,0 +1,25 @@
+rw.vehicle.generic,Transports en commun
+rw.vehicle.bus,Bus
+rw.vehicle.tram,Tramway
+rw.vehicle.train,Train
+rw.vehicle.subway,Métro
+rw.vehicle.ferry,Ferry
+rw.vehicle.ship,Navire de passagers
+rw.vehicle.airplane,Avion
+rw.transit.board_prompt,[ E ] Monter à bord : {0}
+rw.transit.exit_prompt,[ E ] Descendre (de préférence à un arrêt)
+rw.transit.exit_wait_stopped,Attendez l’arrêt complet du véhicule avant de descendre.
+rw.transit.exit_no_platform,Aucun quai sûr confirmé à proximité. Descente impossible (voir le journal).
+rw.transit.exit_no_quay,Aucun quai piéton vérifié ou le navire ne fait pas escale. Débarquement impossible.
+rw.transit.exit_no_path,Aucune zone piétonne sûre à proximité. Réessayez à un arrêt.
+rw.transit.exit_failed,Impossible de quitter le suivi : {0}
+rw.walk.no_network,Aucun chemin piéton à proximité. Mode libre conservé.
+rw.stop.default,Arrêt {0}
+rw.route.unnamed,{0} (ligne sans nom)
+rw.stop.next,Prochain arrêt : {0}
+rw.stop.origin,Départ · {0}
+rw.stop.partial,{0} / {1} arrêts
+rw.stop.total,{0} arrêts au total
+rw.stop.generic,Arrêt
+rw.stop.station_suffix,Gare
+rw.fpc.conflict,Un autre mod First Person Camera est chargé. Désactivez le FPC externe et redémarrez le jeu avant de lancer Real Walking Standalone. N’activez pas les deux éditions ensemble.
