@@ -129,7 +129,8 @@ namespace CS2RealWalkingG1Bridge
                 return;
             }
             var controller = UnityEngine.Object.FindObjectOfType<FirstPersonCameraController>();
-            if (controller == null || controller.GetMode() != CameraMode.Manual) return;
+            // FPC remains disabled until the navigation scan selects a landing.
+            if (controller == null || controller.GetMode() != CameraMode.Disabled) return;
             var snap = RWOverlayState.Latest;
             if (!_hasCamera || snap == null || snap.EntryRequestId != RequestId ||
                 snap.SampleAt < _requested || now - snap.SampleAt > 1f) return;
@@ -163,11 +164,21 @@ namespace CS2RealWalkingG1Bridge
                     System.Reflection.BindingFlags.Instance);
                 var model = field?.GetValue(controller) as
                     FirstPersonCameraContinued.DataModels.CameraDataModel;
-                if (model == null) return;
+                var input = controller.GetCameraInput();
+                var rig = controller.GetRig();
+                if (model == null || input == null || rig == null) return;
                 float eyeY = pick.Point.y + 1.7f;
                 RWWalkState.EnableNavigation();
                 if (!RWCameraHeight.Publish(eyeY)) return;
-                model.Position = new float3(pick.Point.x,eyeY,pick.Point.z);
+                // Only now activate the FPC camera. Toggle() initially resets
+                // the camera to the orbit position, so immediately snap both the
+                // model and the rig to the validated landing within this frame.
+                input.Enable();
+                controller.Toggle();
+                var eye = new Vector3(pick.Point.x, eyeY, pick.Point.z);
+                model.Position = new float3(eye.x, eye.y, eye.z);
+                rig.Parent.position = eye;
+                rig.Update(); // zero position gap completes the existing entry transition
                 RWWalkingController.Ensure();
                 Cancel();
                 RWJournal.Warn("[RW-AUTOENTRY] ENTRY surface=" + pick.Surface+

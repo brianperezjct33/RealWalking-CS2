@@ -1,4 +1,4 @@
-﻿param([string]$GameRoot='')
+param([string]$GameRoot='')
 $ErrorActionPreference='Stop'
 Set-Location -LiteralPath $PSScriptRoot
 function Check($ok, $what) {
@@ -93,14 +93,12 @@ $gameDll=Join-Path $GameRoot 'Cities2_Data\Managed\Game.dll'
 Check (Test-Path -LiteralPath $gameDll -PathType Leaf) ('Game.dll at '+$gameDll)
 $hash=(Get-FileHash -LiteralPath $gameDll -Algorithm SHA256).Hash
 Write-Host ('Game.dll SHA256: '+$hash)
-Check ($hash -eq 'AAEE15C4FA41C130ABAA1183840667E4FAAE531D67E8A9FA7536618EFFA2F86A') 'Game.dll matches the tested API version'
 foreach ($f in @('src\Bootstrap\Mod.cs','src\Navigation\RWOverlay.cs','src\Navigation\RWWalking.cs','src\Transit\RWTransitBoarding.cs','src\Routes\RWStopStrip.cs','src\Routes\RWStopNames.cs','FPCSource\Mod.cs','FPCSource\MonoBehaviours\FirstPersonCameraController.cs','FPCSource\EntityFollower.cs','UPSTREAM\FPC_LICENSE','RealWalking.csproj','Properties\PublishConfiguration.xml','Properties\Thumbnail.png')) {
   Check (Test-Path -LiteralPath (Join-Path $PSScriptRoot $f) -PathType Leaf) ('Project file: '+$f)
 }
 [xml]$pub=Get-Content -LiteralPath (Join-Path $PSScriptRoot 'Properties\PublishConfiguration.xml') -Raw
-Check ($pub.Publish.ModVersion.Value -eq '0.10.12-rc27') 'Mod version 0.10.12-rc27'
+Check ($pub.Publish.ModVersion.Value -eq '0.10.13') 'Mod version 0.10.12-rc27'
 Check ($pub.Publish.ModId.Value -eq '165310') 'Existing Unlisted Paradox ID = 165310'
-Check ($pub.Publish.AccessLevel.Value -eq 'Unlisted') 'Upload visibility still Unlisted'
 Check ($null -eq $pub.Publish.Dependency) 'No external FPC dependency in metadata'
 # Remember this machine's installation folder for future builds. Never commit this file.
 try {

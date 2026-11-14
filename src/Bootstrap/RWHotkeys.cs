@@ -38,6 +38,17 @@ namespace CS2RealWalkingG1Bridge
 
                 RWTransitHint.Ensure();
                 RWTransitRide.TickRoadExitMotion();
+                // GameSimulation does not tick while paused. UIUpdate still runs,
+                // so refresh the existing read-only pedestrian snapshot here only
+                // when a landing is pending or the player is walking on pause.
+                // RWOverlayScanSystem keeps its normal scan throttling and limits.
+                if (focused && (RWAutoEntry.Pending ||
+                    (RWWalkState.Mode == RWTravelMode.Navigation && !RWTransitRide.Active)))
+                {
+                    var simulation = World.GetExistingSystemManaged<Game.Simulation.SimulationSystem>();
+                    if (simulation != null && simulation.selectedSpeed == 0)
+                        World.GetExistingSystemManaged<RWOverlayScanSystem>()?.Update();
+                }
                 RWAutoEntry.Tick();
                 if (RWTransitRide.Active && !RWTransitFpc.IsFollowingRide(RWTransitRide.Followed))
                     RWTransitRide.End("native FPC follow ended");

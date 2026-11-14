@@ -150,10 +150,13 @@ namespace FirstPersonCameraContinued
                 // no longer following anything. Clear them BEFORE Enable(),
                 // which otherwise re-enters directly into Follow mode.
                 OnPrepareManualEntry?.Invoke();
-                // RC18: record the real orbit camera position BEFORE FPC is
-                // enabled. Never capture the transitional first-person camera.
+                // Keep the orbit camera active until RWAutoEntry confirms a safe
+                // landing. RWAutoEntry.Tick will enable FPC and finish this entry.
                 if (_model.FollowEntity == Entity.Null)
+                {
                     CS2RealWalkingG1Bridge.RWAutoEntry.Request();
+                    return;
+                }
                 Enable();
                 if (_model.Mode != CameraMode.Manual)
                     CS2RealWalkingG1Bridge.RWAutoEntry.Cancel();

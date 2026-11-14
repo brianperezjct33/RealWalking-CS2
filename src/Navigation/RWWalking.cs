@@ -37,6 +37,7 @@ namespace CS2RealWalkingG1Bridge
         private float _lastTargetEyeY;
         private float _nextErrorLog;
         private int _generation=-1;
+        private bool _ignoreEntryFUntilRelease;
         private static Type _fpcType;
         private static Component _fpcComponent;
         private static object _fpcModel;
@@ -60,14 +61,25 @@ namespace CS2RealWalkingG1Bridge
         {
             if(_generation!=RWWalkState.Generation)
             { _generation=RWWalkState.Generation;_hasTarget=false;
-              _hasSafeXZ=false;_currentWidth=0f;_lastBoundaryTangent=Vector3.forward; }
+              _hasSafeXZ=false;_currentWidth=0f;_lastBoundaryTangent=Vector3.forward;
+              // Ignore the Alt+F key hold when a new Navigation session begins.
+              _ignoreEntryFUntilRelease=Keyboard.current!=null&&Keyboard.current.fKey.isPressed; }
             if (RWWalkState.Mode == RWTravelMode.Free) return;
             try
             {
                 if(!UnityEngine.Application.isFocused)return;
                 // Explicit manual elevation while navigation is enabled immediately releases camera control.
                 var k=Keyboard.current;
-                if(RWWalkState.Mode == RWTravelMode.Navigation && k!=null && (k.rKey.isPressed || k.fKey.isPressed))
+                // Keep ignoring the entry F until it is released, even if Alt
+                // is released first. Ordinary F still switches to free flight.
+                if(k!=null)
+                {
+                    if(!k.fKey.isPressed)_ignoreEntryFUntilRelease=false;
+                    else if(k.leftAltKey.isPressed||k.rightAltKey.isPressed)
+                        _ignoreEntryFUntilRelease=true;
+                }
+                if(RWWalkState.Mode == RWTravelMode.Navigation && k!=null &&
+                   (k.rKey.isPressed || (k.fKey.isPressed && !_ignoreEntryFUntilRelease)))
                 {RWWalkState.ForceFree("R/F manual elevation: free flight");return;}
                 object model;PropertyInfo hProp,pProp;string reason;
                 if(!TryReadModel(out model,out hProp,out pProp,out reason))

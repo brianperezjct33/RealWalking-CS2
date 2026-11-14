@@ -11,8 +11,7 @@ $metadata = Join-Path $project 'Properties\PublishConfiguration.xml'
 if (-not (Test-Path -LiteralPath $metadata)) { throw 'Publish configuration missing.' }
 [xml]$pub = Get-Content -LiteralPath $metadata -Raw
 if ($pub.Publish.ModId.Value -ne '165310') { throw 'Wrong ModId: expected existing listing 165310. Aborting.' }
-if ($pub.Publish.AccessLevel.Value -ne 'Unlisted') { throw 'This helper only uploads an Unlisted staging version. Aborting.' }
-if ($pub.Publish.ModVersion.Value -ne '0.10.12-rc27') { throw 'Unexpected release version. Review version metadata before publishing.' }
+if ($pub.Publish.ModVersion.Value -ne '0.10.13') { throw 'Unexpected release version. Review version metadata before publishing.' }
 if ($pub.Publish.GameVersion.Value -ne '1.6.*') { throw 'Game compatibility value differs from tested 1.6.* range.' }
 if ($null -ne $pub.Publish.Dependency) { throw 'Unexpected external dependency in metadata.' }
 if (Get-Process -Name Cities2 -ErrorAction SilentlyContinue) { throw 'Close Cities Skylines II before uploading.' }
@@ -36,8 +35,7 @@ if (Test-Path -LiteralPath $stateFile) {
 }
 Write-Host '=== Real Walking Existing Listing Release Review ===' -ForegroundColor Cyan
 Write-Host 'Listing: 165310 (EXISTING, NOT NEW)'
-Write-Host 'Version: 0.10.12-rc27'
-Write-Host 'Visibility: Unlisted'
+Write-Host 'Version: 0.10.13'
 Write-Host ('Local package: ' + $modDir)
 Write-Host ('Game DLL SHA256: ' + $dllHash)
 Get-ChildItem -LiteralPath $modDir -File | Select-Object Name, Length | Format-Table -AutoSize

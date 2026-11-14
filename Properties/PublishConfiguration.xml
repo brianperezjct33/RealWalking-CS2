@@ -24,7 +24,7 @@ STANDALONE CAMERA INCLUDED
 First Person Camera Continued is built into this edition. Do not enable a separate FPC Continued or another conflicting first-person camera mod in the same playset. Restart the game after changing camera mods.
 
 COMPATIBILITY
-Tested with Cities: Skylines II 1.6.x on Windows. Some custom stations, unusual paths and waterfront assets lack suitable navigation geometry, so not every surface or vehicle exit is supported. Entering walking mode while the simulation is paused may fail to find a correct landing; resume the simulation before pressing Alt+F. The mod does not intentionally modify saved city entities or traffic AI; back up important saves as with any code mod.
+Tested with Cities: Skylines II 1.6.x on Windows. Some custom stations, unusual paths and waterfront assets lack suitable navigation geometry, so not every surface or vehicle exit is supported. The mod does not intentionally modify saved city entities or traffic AI; back up important saves as with any code mod.
 
 SOURCE AND CREDITS
 Full source (GPLv2), development history and issue reporting:
@@ -33,8 +33,7 @@ https://github.com/brianperezjct33/RealWalking-CS2
 Embedded camera adapted from First Person Camera Continued by Cgameworld and earlier contributors. This is a community project, not an official Colossal Order / Paradox Interactive mod. Developed with substantial AI coding assistance and maintainer-directed in-game testing.
   </LongDescription>
   <Thumbnail Value="Properties/Thumbnail.png" />
-  <ModVersion Value="0.10.12-rc27" />
+  <ModVersion Value="0.10.13" />
   <GameVersion Value="1.6.*" />
-  <ChangeLog Value="Standalone camera included; no separate First Person Camera Continued dependency. Adds path-aware walking, stairs and station navigation, stopped-vehicle boarding, safe transit exits, free flight, a route display and 12 UI languages. Source: https://github.com/brianperezjct33/RealWalking-CS2" />
-  <AccessLevel Value="Unlisted" />
+  <ChangeLog Value="Improved Alt+F entry: find a safe pedestrian surface before switching to first person. Fixed automatic navigation entry and walking while the simulation is paused. Prevented Alt+F from unintentionally switching to free flight." />
 </Publish>

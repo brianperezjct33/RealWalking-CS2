@@ -63,7 +63,7 @@
   <PropertyGroup>
     <AssemblyName>CS2RealWalkingG1Bridge</AssemblyName>
     <RootNamespace>CS2RealWalkingG1Bridge</RootNamespace>
-    <Version>0.10.12.0</Version>
+    <Version>0.10.13.0</Version>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <DefineConstants>$(DefineConstants);RW_AREA</DefineConstants>
     <LangVersion>latest</LangVersion>
