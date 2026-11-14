@@ -80,8 +80,7 @@ def field(name: str):
     item = meta.find(name)
     return item.attrib.get('Value') if item is not None else None
 require(field('ModId') == '165310', 'unexpected Paradox mod ID')
-require(field('AccessLevel') == 'Unlisted', 'candidate must remain Unlisted')
-require(field('ModVersion') == '0.10.12-rc27', 'candidate version mismatch')
+require(field('ModVersion') == '0.10.13', 'release version mismatch')
 require(meta.find('Dependency') is None, 'external camera dependency added')
 
 entry = combined('Entry')
